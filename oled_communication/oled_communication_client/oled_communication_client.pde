@@ -1,5 +1,5 @@
 /*OLED COMMUNICATION CLIENT
- * By Marinus Bos
+ * By Marinus Bos, 2021
  * 
  * Allows you to plot pixels on an oled that's connected to an arduino which is connected to a server.
  * A data packet consists of 4 bytes in the following structure: [x] [y] [command] [endmarker]

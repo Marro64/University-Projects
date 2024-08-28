@@ -1,3 +1,10 @@
+/*
+Showcase of particles forming words. Change input.txt to change the text displayed. 
+Click for a cool effect. Supports resizing of the window.
+By Marinus and Nina
+Creative Technology Module 2, 2021/2022
+*/
+
 TextContainer textContainer;
 boolean[] mouseButtons = {false, false}; //Left mouse button, right mouse button
 PImage img;

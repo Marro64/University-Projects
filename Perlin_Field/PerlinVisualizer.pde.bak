@@ -1,0 +1,45 @@
+class PerlinVisualizer {
+  PerlinField perlinField;
+
+  PVector pos;
+
+  PerlinVisualizer(PerlinField perlinField, PVector pos) {
+    this.pos = pos.copy();
+    this.perlinField = perlinField;
+  }
+
+  void update() {
+  }
+
+  void display() {
+    pushMatrix();
+    translate(pos.x, pos.y);
+    
+    PVector perlinState = perlinField.getPerlinAt(pos).mult(255);
+    fill(perlinState.x, perlinState.y, perlinState.z);
+    circle(0, 0, 5);
+    text((str(perlinState.x)).concat(" " + str(perlinState.y)).concat(" " + str(perlinState.z)), 0, 0);
+    
+    popMatrix();
+    
+    for(int x = 0; x < 1000; x += 50) {
+      for(int y = 0; y < 1000; y += 50) {
+        for(int z = 0; z < 1000; z+= 50) {
+          perlinState = perlinField.getPerlinAt(new PVector(x, y, z)).mult(255);
+          fill(perlinState.x, perlinState.y, perlinState.z);
+          pushMatrix();
+          translate(x, y, z);
+          circle(0, 0, 5);
+          stroke(perlinState.x, perlinState.y, perlinState.z);
+          perlinState.sub(new PVector(127, 127, 127)).mult(.2);
+          line(0, 0, 0, perlinState.x, perlinState.y, perlinState.z);
+          popMatrix();
+        }
+      }
+    }    
+  }
+
+  void move(PVector pos) {
+    this.pos = new PVector(pos.x, pos.y, 0);
+  }
+}

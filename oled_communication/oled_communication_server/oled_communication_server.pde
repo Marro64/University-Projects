@@ -1,5 +1,5 @@
 /*OLED COMMUNICATION SERVER
- * By Marinus Bos
+ * By Marinus Bos, 2021
  * 
  * Allows a remote client to plot pixels on an oled that's connected to this server via an Arduino.
  * A data packet consists of 4 bytes in the following structure: [x] [y] [command] [endmarker]

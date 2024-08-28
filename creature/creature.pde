@@ -1,3 +1,9 @@
+/*
+ * A little creature in a window, living a simple life.
+ * Click and drag to throw him around. Don't worry, he enjoys it.
+ * By Marinus Bos, 2021
+ */
+
 //PShape creatureForm;
 ArrayList<Creature> creatures = new ArrayList();
 PVector field, cursor, pCursor;
@@ -10,7 +16,7 @@ void setup() {
   frameRate(60);
   
   //generate a nice selection of different creatures
-  int creatureCount = 5; //set to 10 for pretty colors
+  int creatureCount = 1; //set to 10 for pretty colors
   colorMode(HSB, 360, 100, 100); //hue/saturation/brightness color mode, for extra vibrant creatures
   for(int i = 0; i < creatureCount; i++) {
     creatures.add(new Creature(new PVector((i+0.5)*(field.x/(float)creatureCount), field.y), (50+(i+1)*(50/(float)creatureCount)), color(i*(360/(float)creatureCount), 100, 100))); //increment hue and size of each creature

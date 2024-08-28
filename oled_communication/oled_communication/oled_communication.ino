@@ -1,5 +1,5 @@
 /*OLED COMMUNICATION
- * By Marinus Bos
+ * By Marinus Bos, 2021
  * 
  * Allows the arduino to receive serial data to plot pixels onto an OLED screen.
  * A data packet consists of 4 bytes in the following structure: [x] [y] [command] [endmarker]
